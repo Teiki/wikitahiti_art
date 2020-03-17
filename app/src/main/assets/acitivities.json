@@ -1,0 +1,30 @@
+{
+  "activities": [
+    {
+      "properties": {
+        "name": "Fautaua",
+        "type": "rando",
+        "description": "Randonnée menant aux vasques surplombant l'immense cascade de la Fautaua.",
+        "icon": "fautaua_icn",
+        "image": "fautaua"
+      },
+      "infos": {
+        "time_min": "2",
+        "time_max": "4",
+        "rates": {
+          "difficulty": 5,
+          "endurance": 4,
+          "dangerous": 7
+        },
+        "coordinate": [
+          -0.2129338,
+          46.2850109
+        ]
+      }
+    }]
+}
+
+
+
+
+
