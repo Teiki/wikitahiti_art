@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.wikitahiti.teiki.wikitahiti"
-    android:versionCode="1"
-    android:versionName="0.1">
+    package="fr.teiki.wikitahiti.wikitahiti">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
-        android:name=".AppController"
+        android:name="fr.teiki.wikitahiti.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.DrawerMainActivity"
+            android:name="fr.teiki.wikitahiti.activities.DrawerMainActivity"
             android:label="@string/title_activity_drawer_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -28,6 +28,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="fr.teiki.wikitahiti.activities.ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="fr.teiki.wikitahiti.activities.DrawerMainActivity"/>
+        <activity android:name="fr.teiki.wikitahiti.activities.ChatActivity"
+            android:label="@string/toolbar_title_mentor_chat_activity"
+            android:parentActivityName="fr.teiki.wikitahiti.activities.DrawerMainActivity"/>
+
     </application>
 
 </manifest>
