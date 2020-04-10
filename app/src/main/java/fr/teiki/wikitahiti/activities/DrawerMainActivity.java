@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.ViewModelProvider;
@@ -21,16 +20,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,7 +62,7 @@ public class DrawerMainActivity extends BaseActivity {
 		// Passing each menu ID as a set of Ids because each
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration = new AppBarConfiguration.Builder(
-				R.id.nav_map, R.id.nav_share, R.id.nav_send)
+				R.id.nav_map, R.id.nav_chat, R.id.nav_share, R.id.nav_send)
 				.setDrawerLayout(findViewById(R.id.drawer_layout))
 				.build();
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -109,6 +103,7 @@ public class DrawerMainActivity extends BaseActivity {
 		} else {
 			((TextView) headerView.findViewById(R.id.txt_nav_header_title)).setText(getString(R.string.nav_header_title));
 			((TextView) headerView.findViewById(R.id.txt_nav_header_subtitle)).setText("");
+			((ImageView) headerView.findViewById(R.id.img_nav_header)).setImageResource(R.mipmap.ic_launcher_round);
 			headerView.setOnClickListener(v -> startSignInActivity());
 		}
 	}

@@ -1,4 +1,4 @@
-package fr.teiki.wikitahiti.chat;
+package fr.teiki.wikitahiti.activities.ui.chat.utils;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -27,12 +27,12 @@ public class ChatAdapter extends FirestoreRecyclerAdapter<Message, MessageViewHo
 	private final String idCurrentUser;
 
 	//FOR COMMUNICATION
-	private Listener callback;
+	private Listener myCallback;
 
 	public ChatAdapter(@NonNull FirestoreRecyclerOptions<Message> options, RequestManager glide, Listener callback, String idCurrentUser) {
 		super(options);
 		this.glide = glide;
-		this.callback = callback;
+		myCallback = callback;
 		this.idCurrentUser = idCurrentUser;
 	}
 
@@ -41,6 +41,7 @@ public class ChatAdapter extends FirestoreRecyclerAdapter<Message, MessageViewHo
 		holder.updateWithMessage(model, this.idCurrentUser, this.glide);
 	}
 
+	@NonNull
 	@Override
 	public MessageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		return new MessageViewHolder(LayoutInflater.from(parent.getContext())
@@ -50,6 +51,6 @@ public class ChatAdapter extends FirestoreRecyclerAdapter<Message, MessageViewHo
 	@Override
 	public void onDataChanged() {
 		super.onDataChanged();
-		this.callback.onDataChanged();
+		myCallback.onDataChanged();
 	}
 }

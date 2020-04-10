@@ -32,9 +32,6 @@
             android:name="fr.teiki.wikitahiti.activities.ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName="fr.teiki.wikitahiti.activities.DrawerMainActivity"/>
-        <activity android:name="fr.teiki.wikitahiti.activities.ChatActivity"
-            android:label="@string/toolbar_title_mentor_chat_activity"
-            android:parentActivityName="fr.teiki.wikitahiti.activities.DrawerMainActivity"/>
 
     </application>
 

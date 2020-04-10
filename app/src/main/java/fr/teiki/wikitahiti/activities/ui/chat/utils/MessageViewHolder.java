@@ -1,4 +1,4 @@
-package fr.teiki.wikitahiti.chat;
+package fr.teiki.wikitahiti.activities.ui.chat.utils;
 
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
